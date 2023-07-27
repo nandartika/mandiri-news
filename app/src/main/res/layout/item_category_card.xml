@@ -2,23 +2,24 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		android:layout_width="match_parent"
-		android:layout_height="48dp"
+		android:layout_height="wrap_content"
 		xmlns:tools="http://schemas.android.com/tools"
 		android:layout_margin="8dp"
-		android:padding="4dp"
-		app:cardElevation="8dp">
+		app:cardElevation="8dp"
+		app:cardCornerRadius="8dp">
 
 	<LinearLayout
+			android:id="@+id/cvCategoryItem"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:orientation="horizontal"
-			android:padding="5dp">
+			android:padding="8dp">
 
 		<ImageView
 				android:id="@+id/icon"
-				tools:srcCompat="@tools:sample/avatars"
 				android:layout_width="40dp"
-				android:layout_height="40dp" />
+				android:layout_height="40dp"
+				tools:srcCompat="@tools:sample/avatars" />
 
 		<TextView
 				android:id="@+id/categoryName"

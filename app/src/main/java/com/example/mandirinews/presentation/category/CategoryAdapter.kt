@@ -3,6 +3,7 @@ package com.example.mandirinews.presentation.category
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.mandirinews.data.model.category.Category
 import com.example.mandirinews.databinding.ItemCategoryCardBinding
 
@@ -27,8 +28,10 @@ class CategoryAdapter(
 		RecyclerView.ViewHolder(binding.root) {
 		fun bind(category: Category) {
 			binding.categoryName.text = category.name
-//			Glide.with(itemView.context).load().into(binding.icon)
-			onClickCategoryItem?.invoke(category.id)
+			Glide.with(itemView.context).load(category.icon).into(binding.icon)
+			binding.cvCategoryItem.setOnClickListener {
+				onClickCategoryItem?.invoke(category.id)
+			}
 		}
 	}
 }
